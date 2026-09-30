@@ -1,0 +1,20 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/dat/Workspace/gravitational_compensation/install/rviz_custom_plugins/local/lib/python3.10/dist-packages",
+        "/home/dat/Workspace/gravitational_compensation/install/my_rqt_plugin/lib/python3.10/site-packages",
+        "/home/dat/ws_moveit2/install/moveit_msgs/local/lib/python3.10/dist-packages",
+        "/home/dat/ws_moveit2/build/moveit_configs_utils",
+        "/home/dat/ws_moveit2/install/moveit_configs_utils/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/dat/Workspace/gravitational_compensation/install/rviz_custom_plugins/local/lib/python3.10/dist-packages",
+        "/home/dat/Workspace/gravitational_compensation/install/my_rqt_plugin/lib/python3.10/site-packages",
+        "/home/dat/ws_moveit2/install/moveit_msgs/local/lib/python3.10/dist-packages",
+        "/home/dat/ws_moveit2/build/moveit_configs_utils",
+        "/home/dat/ws_moveit2/install/moveit_configs_utils/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}

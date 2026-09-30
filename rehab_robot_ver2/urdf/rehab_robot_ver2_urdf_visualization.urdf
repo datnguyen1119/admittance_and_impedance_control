@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="rehab_robot_ver2">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.022854 -0.1085 0.53799"
+        rpy="0 0 0" />
+      <mass
+        value="6.6731" />
+      <inertia
+        ixx="0.29283"
+        ixy="-1.6968E-05"
+        ixz="2.2985E-05"
+        iyy="0.3103"
+        iyz="0.035763"
+        izz="0.1624" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="shoulder_link">
+    <inertial>
+      <origin
+        xyz="-0.060369 -1.7931E-12 -0.036849"
+        rpy="0 0 0" />
+      <mass
+        value="0.06547" />
+      <inertia
+        ixx="0.00010552"
+        ixy="5.2801E-21"
+        ixz="-7.374E-05"
+        iyy="0.00018777"
+        iyz="3.2187E-20"
+        izz="0.0001159" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/shoulder_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/shoulder_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_joint"
+    type="revolute">
+    <origin
+      xyz="-0.26475 -0.15642 1.0553"
+      rpy="0.2618 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="shoulder_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="upper_arm_link">
+    <inertial>
+      <origin
+        xyz="-0.079145 0.008564 0.015419"
+        rpy="0 0 0" />
+      <mass
+        value="1.5832" />
+      <inertia
+        ixx="0.0019452"
+        ixy="0.0004682"
+        ixz="-0.00022867"
+        iyy="0.0033308"
+        iyz="1.8435E-05"
+        izz="0.0048906" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/upper_arm_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/upper_arm_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shoulder_joint"
+    type="revolute">
+    <origin
+      xyz="-0.098298 0 -0.082481"
+      rpy="0 -1.3963 0" />
+    <parent
+      link="shoulder_link" />
+    <child
+      link="upper_arm_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="0.52"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="lower_arm_link">
+    <inertial>
+      <origin
+        xyz="-0.12194 0.00020078 -0.0040585"
+        rpy="0 0 0" />
+      <mass
+        value="0.18858" />
+      <inertia
+        ixx="8.9494E-05"
+        ixy="1.6186E-06"
+        ixz="-0.00013362"
+        iyy="0.00063311"
+        iyz="5.6467E-07"
+        izz="0.0006346" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/lower_arm_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/lower_arm_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="elbow_joint"
+    type="revolute">
+    <origin
+      xyz="-0.21365 0.052456 -0.021"
+      rpy="0 0 -0.59619" />
+    <parent
+      link="upper_arm_link" />
+    <child
+      link="lower_arm_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="end_effector">
+    <inertial>
+      <origin
+        xyz="5.5511E-17 0.0057075 0.018727"
+        rpy="0 0 0" />
+      <mass
+        value="0.08604" />
+      <inertia
+        ixx="2.9211E-05"
+        ixy="1.2917E-20"
+        ixz="1.6941E-21"
+        iyy="2.7277E-05"
+        iyz="7.159E-08"
+        izz="3.5412E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/end_effector.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/end_effector.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wrist_joint"
+    type="fixed">
+    <origin
+      xyz="-0.26313 0 -0.040415"
+      rpy="1.309 0 1.5708" />
+    <parent
+      link="lower_arm_link" />
+    <child
+      link="end_effector" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
